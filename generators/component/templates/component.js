@@ -3,10 +3,10 @@ import PureComponent from 'pure-component';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 
-import './NameComp.scss';
+import './<%= name %>.scss';
 
 
-export class NameComp extends PureComponent {
+export class <%= name %> extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -17,8 +17,8 @@ export class NameComp extends PureComponent {
         const { className } = this.props;
 
         return (
-            <div id="name-comp" className={classNames(className)}>
-                NameComp
+            <div id="<%= kebabName %>" className={classNames(className)}>
+                <%= name %>
             </div>
         );
     }
@@ -33,4 +33,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NameComp);
+export default connect(mapStateToProps, mapDispatchToProps)(<%= name %>);
